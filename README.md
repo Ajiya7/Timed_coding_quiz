@@ -4,7 +4,7 @@
 
 ## Task
 
-* To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
 
 ## User Story
 
@@ -41,3 +41,5 @@ THEN I can save my initials and my score
 * Email: Ajiyafaruk@gmail.com
 
 ### Anyone Can Contribute
+
+### Repo link: https://github.com/Ajiya7/Timed_coding_quiz 

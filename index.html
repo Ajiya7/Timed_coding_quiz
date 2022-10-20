@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz Challenge</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 
 <body>
+
     <div class="intro_container">
         <h2>Coding Quiz Challenge</h2>
         <p>
@@ -18,7 +21,41 @@
         </p>
         <button id="start-button">Start Quiz</button>
     </div>
+
+    <div class="question-container">
+        <h2 id="question"></h2>
+        <button id="1"></button><br>
+        <button id="2"></button><br>
+        <button id="3"></button><br>
+        <button id="4"></button><br>
+    </div>
+
+    <div class="GameOver_or_GameEnd_container">
+        <h2>All Done!</h2>
+        <p>Your final score is: <span id="final-score"></span></p>
+        <form>
+            <label for="user_initials">High Score Registration</label>
+            <input type="text" id="user_initials" name="user_initials" placeholder="Enter Initials">
+        </form>
+        <button id="Submit_score">Submit</button>
+    </div>
+
+    <div class="Timer_container">
+       <h2><span>Time:</span></h2>
+        <h2><span id="Timer"></span></h2>
+    </div>
+
+    <div class="score_container">
+        <h2>High Scores</h2>
+        <div id="scores_table"></div>
+        <button id="restart_quiz">Go Back</button>
+        <button id="clear_scores">Clear Highscores</button>
+    </div>
+
+    <span class="game-containers" id="answer-result"></span>
+
     <script src="./assets/JS/script.js"></script>
+
 </body>
 
 </html>
