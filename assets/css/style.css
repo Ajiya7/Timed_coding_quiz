@@ -1,0 +1,66 @@
+* {
+    font-family: Roboto, sans-serif;
+    font-size: 1.2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.Timer_container {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    font-weight: bold;
+    margin-right: 100px;
+}
+
+.intro_container {
+    text-align: center;
+}
+
+#restart_quiz,
+#clear_scores,
+#start-button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+#a1,
+#a2,
+#a3,
+#a4{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: .5rem;
+    font-size: 1rem; 
+}
+
+#answer-result {
+    font-style: italic;
+    border-top: .5px solid grey;
+    color: grey;
+}
+
+.hidden{
+    display: none;
+}
+
+.game_c {
+    width: 50%;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+#view-scores {
+    color: black;
+    font-weight: bold;
+    position: fixed;
+    left: 10px;
+    top: 40px;
+}

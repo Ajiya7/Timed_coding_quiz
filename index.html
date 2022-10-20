@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="intro_container">
+    <div class="intro_container game_c">
         <h2>Coding Quiz Challenge</h2>
         <p>
             Try to answer the following code-related questions within the time limit. <br>
@@ -22,19 +22,19 @@
         <button id="start-button">Start Quiz</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container game_c hidden">
         <h2 id="question"></h2>
-        <button id="1"></button><br>
-        <button id="2"></button><br>
-        <button id="3"></button><br>
-        <button id="4"></button><br>
+        <button id="a1"></button><br>
+        <button id="a2"></button><br>
+        <button id="a3"></button><br>
+        <button id="a4"></button><br>
     </div>
 
-    <div class="GameOver_or_GameEnd_container">
+    <div class="GameOver_or_GameEnd_container game_c hidden">
         <h2>All Done!</h2>
         <p>Your final score is: <span id="final-score"></span></p>
         <form>
-            <label for="user_initials">High Score Registration</label>
+            <label for="user_initials">Enter Initials</label>
             <input type="text" id="user_initials" name="user_initials" placeholder="Enter Initials">
         </form>
         <button id="Submit_score">Submit</button>
@@ -45,14 +45,16 @@
         <h2><span id="Timer"></span></h2>
     </div>
 
-    <div class="score_container">
+    <span id="view-scores">View Highscores</span>
+
+    <div class="score_container game_c hidden">
         <h2>High Scores</h2>
         <div id="scores_table"></div>
         <button id="restart_quiz">Go Back</button>
         <button id="clear_scores">Clear Highscores</button>
     </div>
 
-    <span class="game-containers" id="answer-result"></span>
+    <span class="game_c hidden" id="answer-result"></span>
 
     <script src="./assets/JS/script.js"></script>
 
