@@ -1,6 +1,6 @@
 const Questions = [
 	{
-		question: "The content of the page (such as your pictures, text, links) will show up where?",
+		Questions: "The content of the page (such as your pictures, text, links) will show up where?",
 		choices: {
 			a: 'Head',
 			b: 'Body',
@@ -109,3 +109,44 @@ const Questions = [
 		Answer: 'a'
 	}
 ];
+
+var startbutton = document.getElementById("start-button");
+var  Restartbutton = document.getElementById("restart_quiz");
+var  Clearscores = document.getElementById("clear_scores");
+var  time = document.getElementById("Timer");
+var  results = document.getElementById("answer-result");
+var  scores = document.getElementById("view-scores");
+var  Highscoresub = document.getElementById("Submit_score");
+var  FScore = document.getElementById("final-score");
+var  table = document.getElementById("Scores_table");
+var  highscorelist = document.getElementById("list");
+var  choicesEL = [
+    document.getElementById("a1"),
+    document.getElementById("a2"),
+    document.getElementById("a3"),
+    document.getElementById("a4")
+];
+
+
+startbutton.addEventListener("click", function() {
+
+    function countdown() {
+    var timeLeft = 120;
+    var timeInterval = setInterval(function () {
+    if (timeLeft > 1) {
+    time.textContent = timeLeft;
+    timeLeft--;
+    } else if (timeLeft === 1) {
+    time.textContent = timeLeft;
+    timeLeft--;
+    } else {
+    time.textContent = '';
+    clearInterval(timeInterval);
+    }
+    }, 1000);
+    }
+    countdown();  
+
+
+    
+});

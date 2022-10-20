@@ -10,10 +10,10 @@ h2 {
 
 .Timer_container {
     position: fixed;
-    right: 10px;
+    right: 30px;
     top: 10px;
     font-weight: bold;
-    margin-right: 100px;
+    padding-right: 10px;
 }
 
 .intro_container {
