@@ -1,116 +1,116 @@
 const Questions = [
 	{
-		Questions: "The content of the page (such as your pictures, text, links) will show up where?",
-		choices: {
-			a: 'Head',
-			b: 'Body',
-			c: 'Style',
-            d: 'Folder'
-		},
-		Answer: 'b'
+		questions: "The content of the page (such as your pictures, text, links) will show up where?",
+		choices: [
+			'a: Head',
+			'b: Body',
+			'c: Style',
+            'd: Folder'
+        ],
+		Answer: 'b: Body'
 	},
 
     {
-		question: "What is the default link color for hyperlinks?",
-		choices: {
-			a: 'blue',
-			b: 'green',
-			c: 'purple',
-            d: 'red'
-		},
-		Answer: 'a'
+		questions: "What is the default link color for hyperlinks?",
+		choices: [
+			'a: blue',
+			'b: green',
+			'c: purple',
+            'd: red'
+        ],
+		Answer: 'a: blue',
 	},
 
     {
-		question: "Which tag is used to underline text?",
-		choices: {
-			a: '<a>',
-			b: '<u>',
-			c: '<b>',
-            d: '<l>'
-		},
-		Answer: 'b'
+		questions: "Which tag is used to underline text?",
+		choices: [
+			'a: <a>',
+			'b: <u>',
+			'c: <b>',
+            'd: <l>'
+        ],
+		Answer: 'b: <u>',
 	},
 
     {
-		question: "Defines a division or a section in an HTML document. Used to group block-elements to format them with CSS",
-		choices: {
-			a: '<span>',
-			b: '<caption>',
-			c: '<group>',
-            d: '<div>'
-		},
-		Answer: 'd'
+		questions: "Defines a division or a section in an HTML document. Used to group block-elements to format them with CSS",
+		choices: [
+			'a: <span>',
+			'b: <caption>',
+			'c: <group>',
+            'd: <div>'
+        ],
+		Answer: 'd: <div>'
 	},
 
     {
-		question: "What does CSS stand for?",
-		choices: {
-			a: 'Colorful Style Sheets',
-			b: 'Creative Style Sheets',
-			c: 'Cascading Style Sheets',
-            d: 'Computer Style Sheets'
-		},
-		Answer: 'c'
+		questions: "What does CSS stand for?",
+		choices: [
+			'a: Colorful Style Sheets',
+			'b: Creative Style Sheets',
+			'c: Cascading Style Sheets',
+            'd: Computer Style Sheets'
+        ],
+		Answer: 'c: Cascading Style Sheets'
 	},
 
     {
-		question: "Where in an HTML document is the correct place to refer to an external style sheet (such as style.css)?",
-		choices: {
-			a: 'In the <head> section',
-			b: 'In the <body> section',
-			c: 'At the end of the document',
-            d: 'In the <css> section'
-		},
-		Answer: 'a'
+		questions: "Where in an HTML document is the correct place to refer to an external style sheet (such as style.css)?",
+		choices: [
+			'a: In the <head> section',
+			'b: In the <body> section',
+			'c: At the end of the document',
+            'd: In the <css> section'
+        ],
+		Answer: 'a: In the <head> section'
 	},
 
     {
-		question: "Which is the correct CSS syntax?",
-		choices: {
-			a: 'body:color=black;',
-			b: '{body;color:black;}',
-			c: 'body {color: black;}',
-            d: '{body:color=black;}'
-		},
-		Answer: 'c'
+		questions: "Which is the correct CSS syntax?",
+		choices: [
+			'a: body:color=black;',
+			'b: {body;color:black;}',
+			'c: body {color: black;}',
+            'd: {body:color=black;}'
+        ],
+		Answer: 'c: body {color: black;}'
 	},
 
     {
-		question: "Which of the following operators are not used for making comparisons?",
-		choices: {
-			a: '==',
-			b: '>',
-			c: '+',
-            d: '!='
-		},
-		Answer: 'd'
+		questions: "Which of the following operators are not used for making comparisons?",
+		choices: [
+			'a: ==',
+			'b: >',
+			'c: +',
+            'd: !='
+        ],
+		Answer: 'd: !='
 	},
 
     {
-		question: "Which data type is returned when using the `confirm()` function?",
-		choices: {
-			a: 'Number',
-			b: 'Boolean',
-			c: 'String',
-            d: 'Undefined'
-		},
-		Answer: 'b'
+		questions: "Which data type is returned when using the `confirm()` function?",
+		choices: [
+			'a: Number',
+			'b: Boolean',
+			'c: String',
+            'd: Undefined'
+        ],
+		Answer: 'b: Boolean',
 	},
 
     {
-		question: "JavaScript files have the file extension (the bit after the name)?",
-		choices: {
-			a: '.js',
-			b: '.css',
-			c: '.html',
-            d: '.java'
-		},
-		Answer: 'a'
+		questions: "JavaScript files have the file extension (the bit after the name)?",
+		choices: [
+			'a: .js',
+			'b: .css',
+			'c: .html',
+            'd: .java'
+        ],
+		Answer: 'a: .js'
 	}
 ];
 
-var startbutton = document.getElementById("start-button");
+var  startbutton = document.getElementById("start-button");
 var  Restartbutton = document.getElementById("restart_quiz");
 var  Clearscores = document.getElementById("clear_scores");
 var  time = document.getElementById("Timer");
@@ -120,33 +120,59 @@ var  Highscoresub = document.getElementById("Submit_score");
 var  FScore = document.getElementById("final-score");
 var  table = document.getElementById("Scores_table");
 var  highscorelist = document.getElementById("list");
-var  choicesEL = [
-    document.getElementById("a1"),
-    document.getElementById("a2"),
-    document.getElementById("a3"),
-    document.getElementById("a4")
-];
+var  GamestartEL = document.getElementsByClassName("intro_container");
+var  QuestionsEL = document.getElementsByClassName("question-container");
+var  GameoverEL = document.getElementsByClassName("GameOver_container");
+var  ScoresEL = document.getElementsByClassName("score_container");
 
+ var score = 0;
+ var timeLeft = 120;
+ var index = 0;
 
-startbutton.addEventListener("click", function() {
+startbutton.onclick = () =>{
+    QuestionsEL[0].classList.add("activeInfo");
+    GamestartEL[0].classList.add("activeInfo");
+    showquestions(index);
+    countdown();
+}
 
-    function countdown() {
-    var timeLeft = 120;
-    var timeInterval = setInterval(function () {
-    if (timeLeft > 1) {
-    time.textContent = timeLeft;
-    timeLeft--;
-    } else if (timeLeft === 1) {
-    time.textContent = timeLeft;
-    timeLeft--;
+function countdown() {
+var timeInterval = setInterval(function () {
+ if (timeLeft > 1) {
+time.textContent = timeLeft;
+timeLeft--;
+} else if (timeLeft === 0) {
+
+} else {
+time.textContent = '0';
+clearInterval(timeInterval);
+}
+}, 1000);}
+
+let que_count = 0;
+
+function showquestions(index){
+    const question = document.querySelector(".question");
+    const Choices = document.querySelector(".Choices_list");
+    let que_tag = '<h2>'+Questions[index].questions+'</h2>';
+    let choices_tag = '<button class="choices" id="a1">'+Questions[index].choices[0]+'</button><br>'+
+                      '<button class="choices" id="a2">'+Questions[index].choices[1]+'</button><br>'+
+                      '<button class="choices" id="a3">'+Questions[index].choices[2]+'</button><br>'+
+                      '<button class="choices" id="a4">'+Questions[index].choices[3]+'</button><br>'
+    question.innerHTML = que_tag;
+    Choices.innerHTML = choices_tag;
+    const option = Choices.querySelectorAll(".choices")
+    for(let i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)")
+    }
+}
+
+function optionSelected(answer){
+    let Userans= answer.textContent;
+    let Correctans =  Questions[index].Answer; 
+    if (Userans == Correctans ) {
+        FScore = FScore + 10;
     } else {
-    time.textContent = '';
-    clearInterval(timeInterval);
+        timeLeft = timeLeft - 10;
     }
-    }, 1000);
-    }
-    countdown();  
-
-
-    
-});
+}
