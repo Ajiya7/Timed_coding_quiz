@@ -24,23 +24,23 @@ const Questions = [
     {
 		questions: "Which tag is used to underline text?",
 		choices: [
-			'a: <a>',
-			'b: <u>',
-			'c: <b>',
-            'd: <l>'
+			'a: a',
+			'b: u',
+			'c: b',
+            'd: l'
         ],
-		Answer: 'b: <u>',
+		Answer: 'b: u',
 	},
 
     {
 		questions: "Defines a division or a section in an HTML document. Used to group block-elements to format them with CSS",
 		choices: [
-			'a: <span>',
-			'b: <caption>',
-			'c: <group>',
-            'd: <div>'
+			'a: span',
+			'b: caption',
+			'c: group',
+            'd: div'
         ],
-		Answer: 'd: <div>'
+		Answer: 'd: div'
 	},
 
     {
@@ -57,12 +57,12 @@ const Questions = [
     {
 		questions: "Where in an HTML document is the correct place to refer to an external style sheet (such as style.css)?",
 		choices: [
-			'a: In the <head> section',
-			'b: In the <body> section',
+			'a: In the head section',
+			'b: In the body section',
 			'c: At the end of the document',
-            'd: In the <css> section'
+            'd: In the css section'
         ],
-		Answer: 'a: In the <head> section'
+		Answer: 'a: In the head section'
 	},
 
     {
@@ -128,7 +128,7 @@ var  username = document.getElementById("user_initials");
 
  var timeLeft = 120;
  var index = 0;
-
+FScore = 0
 startbutton.onclick = () =>{
     QuestionsEL[0].classList.add("activeInfo");
     GamestartEL[0].classList.add("activeInfo");
@@ -162,12 +162,23 @@ function showquestions(index){
     question.innerHTML = que_tag;
     Choices.innerHTML = choices_tag;
     const option = Choices.querySelectorAll(".choices")
-    Choices.addEventListener("click", function(event) {
-    for(let i=0; i < option.length; i++){
-        option[i].setAttribute("onclick", "optionSelected(answer)")
+    for (let i = 0; i < option.length; i++) {
+      option[i].setAttribute("onclick","optionSelected(answer)")
     }
+    Choices.addEventListener("click", function(event) {
     if(index<Questions.length){
         index++;
+        let que_tag = '<h2>'+Questions[index].questions+'</h2>';
+        let choices_tag = '<button class="choices" id="a1">'+Questions[index].choices[0]+'</button><br>'+
+                      '<button class="choices" id="a2">'+Questions[index].choices[1]+'</button><br>'+
+                      '<button class="choices" id="a3">'+Questions[index].choices[2]+'</button><br>'+
+                      '<button class="choices" id="a4">'+Questions[index].choices[3]+'</button><br>'
+        question.innerHTML = que_tag;
+        Choices.innerHTML = choices_tag
+        const option = Choices.querySelectorAll(".choices")
+        for (let i = 0; i < option.length; i++) {
+            option[i].setAttribute("onclick","optionSelected(answer)")
+          }
     }else {
         gameover()
     }
@@ -201,8 +212,6 @@ function gameover(){
         localStorage.setItem('highScores', JSON.stringify(highScores));
         window.location.assign('/');
     })
-    GameoverEL[0].classList.add("activeInfos");
-    ScoresEL[0].classList.add("activeInfo");
 }
 
 Restartbutton.onclick = () =>{
