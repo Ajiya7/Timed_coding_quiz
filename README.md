@@ -31,8 +31,8 @@ THEN I can save my initials and my score
 ```
 
 ## Usage
-
-* 
+* first you will see the introduction of the webpage where you will click on the startbutton to start the quiz and if you get a question 10 points will be added to your final score but if you get it wrong 10 seconds will be deducted from your time and after you finish anwering the questions or the time finishes you will be redirected to enter your initials and your initial and score will be saved
+* there is a image of the delpoyed page in the assets images folder
 
 
 ## Contact Me
