@@ -37,9 +37,27 @@ h2 {
     display: block;
 }
 
+.question-container.activeInfos{
+    display: none;
+}
+
+
 .intro_container.activeInfo{
     display: none; 
 }
+
+.GameOver_container.activeInfo{
+    display: block;
+}
+
+.GameOver_container.activeInfos{
+    display: none;
+}
+
+.score_container.activeInfo{
+    display: block;
+}
+
 
 #restart_quiz,
 #clear_scores,

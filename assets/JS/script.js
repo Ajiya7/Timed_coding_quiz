@@ -124,8 +124,8 @@ var  GamestartEL = document.getElementsByClassName("intro_container");
 var  QuestionsEL = document.getElementsByClassName("question-container");
 var  GameoverEL = document.getElementsByClassName("GameOver_container");
 var  ScoresEL = document.getElementsByClassName("score_container");
+var  username = document.getElementById("user_initials");
 
- var score = 0;
  var timeLeft = 120;
  var index = 0;
 
@@ -141,8 +141,8 @@ var timeInterval = setInterval(function () {
  if (timeLeft > 1) {
 time.textContent = timeLeft;
 timeLeft--;
-} else if (timeLeft === 0) {
-
+} else if (timeLeft == 0) {
+gameover()
 } else {
 time.textContent = '0';
 clearInterval(timeInterval);
@@ -162,8 +162,13 @@ function showquestions(index){
     question.innerHTML = que_tag;
     Choices.innerHTML = choices_tag;
     const option = Choices.querySelectorAll(".choices")
-    for(let i=0; i < option.length; i++){
-        option[i].setAttribute("onclick", "optionSelected(this)")
+    for(let index=0; index < option.length; index++){
+        option[index].setAttribute("onclick", "optionSelected(this)")
+    }
+    if(index<Questions.length){
+        index++;
+    }else {
+        gameover()
     }
 }
 
@@ -176,3 +181,39 @@ function optionSelected(answer){
         timeLeft = timeLeft - 10;
     }
 }
+
+function gameover(){
+    QuestionsEL[0].classList.add("activeInfos");
+    GameoverEL[0].classList.add("activeInfo");
+    Highscoresub.addEventListener("click",function() {
+        var finalscorsave = localStorage.getItem("finalscorsave");
+        var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+        FScore.innerText = finalscorsave;
+        const score = {
+            score: finalscorsave,
+            name: username.value,
+        };
+        highScores.push(score);
+        highScores.sort((a, b) => b.score - a.score);
+    
+        localStorage.setItem('highScores', JSON.stringify(highScores));
+        window.location.assign('/');
+    })
+    GameoverEL[0].classList.add("activeInfos");
+    ScoresEL[0].classList.add("activeInfo");
+}
+
+Restartbutton.onclick = () =>{
+    startbutton.onclick = () =>{
+        QuestionsEL[0].classList.add("activeInfo");
+        GamestartEL[0].classList.add("activeInfo");
+        showquestions(index);
+        countdown();
+    }
+}
+
+Clearscores.onclick = () =>{
+
+}
+
+
