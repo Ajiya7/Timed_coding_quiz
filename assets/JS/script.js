@@ -210,7 +210,8 @@ function gameover(){
         highScores.sort((a, b) => b.score - a.score);
     
         localStorage.setItem('highScores', JSON.stringify(highScores));
-        window.location.assign('/');
+        GameoverEL[0].classList.add("activeInfos");
+        ScoresEL[0].classList.add("activeInfo");
     })
 }
 
@@ -222,9 +223,4 @@ Restartbutton.onclick = () =>{
         countdown();
     }
 }
-
-Clearscores.onclick = () =>{
-
-}
-
 
