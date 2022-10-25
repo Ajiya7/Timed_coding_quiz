@@ -162,14 +162,16 @@ function showquestions(index){
     question.innerHTML = que_tag;
     Choices.innerHTML = choices_tag;
     const option = Choices.querySelectorAll(".choices")
-    for(let index=0; index < option.length; index++){
-        option[index].setAttribute("onclick", "optionSelected(this)")
+    Choices.addEventListener("click", function(event) {
+    for(let i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(answer)")
     }
     if(index<Questions.length){
         index++;
     }else {
         gameover()
     }
+})
 }
 
 function optionSelected(answer){
